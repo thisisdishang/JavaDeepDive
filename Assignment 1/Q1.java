@@ -1,4 +1,4 @@
-// Java Program to add marks of two subjects. Write the same program using Command line arguments.
+// Java Program to add marks of two subjects. Write the same program using Command line arguments
 
 import java.util.Scanner;
 
