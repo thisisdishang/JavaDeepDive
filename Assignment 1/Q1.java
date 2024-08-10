@@ -11,7 +11,8 @@ class Q1 {
 
             System.out.println("Subject 2 Marks: " + args[1]);
 
-            // Here the command line argument are in string so we have to convert into integer for addition
+            // Here the command line argument are in string so we have to convert into
+            // integer for addition
             System.out.println("Total Marks: " + (Integer.parseInt(args[0]) + Integer.parseInt(args[1])));
         } else {
             System.out.println("Please enter two subjects marks via command line");

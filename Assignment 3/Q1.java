@@ -1,4 +1,5 @@
-/* Java Program to inherit time class (i.e. First class has the hour component, Second class has the minutes component & the Third class has a seconds component.) Given 2 objects, find the time lapsed between them. (Generate Documentation for your program.)*/
+/* Java Program to inherit time class (i.e. First class has the hour component, Second class has the minutes component & the Third class
+has a seconds component.) Given 2 objects, find the time lapsed between them. (Generate Documentation for your program.)*/
 
 class Second {
     int second;
@@ -79,7 +80,7 @@ public class Q1 {
     public static void main(String[] args) {
         Time t1 = new Time(18, 30, 40);
         Time t2 = new Time(13, 20, 40);
-        //time difference
+        // time difference
         String difference = t1.timeLapsed(t2);
 
         System.out.println("Time difference: " + difference);
