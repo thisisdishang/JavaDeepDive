@@ -8,7 +8,7 @@ public class ServerSide {
         DataOutputStream doso;
 
         ServerSocket ss = new ServerSocket(5555);
-        System.out.println("Server started");
+        System.out.println("Server started...");
 
         System.out.println("Waiting for a client...");
         s = ss.accept();
@@ -16,14 +16,24 @@ public class ServerSide {
         System.out.println("Client accepted");
         diso = new DataInputStream(s.getInputStream());
         doso = new DataOutputStream(s.getOutputStream());
+        BufferedReader bro = new BufferedReader(new InputStreamReader(System.in));
 
-        int i;
+        String receivedMsg;
+        String sendMsg;
         do {
-            i = diso.read();
-            System.out.println((char) i + " " + i);
-        } while ((char) i != 'q');
+            System.out.println();
+            receivedMsg = diso.readUTF();
+            System.out.println("Received msg : " + receivedMsg);
+
+            System.out.print("Send msg : ");
+            sendMsg = bro.readLine();
+            doso.writeUTF(sendMsg);
+            System.out.println("Send msg Successfully : ");
+        } while (!sendMsg.equals("stop") || !receivedMsg.equals("stop"));
 
         System.out.println("Closing connection");
+        diso.close();
+        s.close();
         ss.close();
     }
 }

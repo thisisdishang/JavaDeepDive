@@ -7,18 +7,34 @@ public class ClientSide {
         DataInputStream diso;
         DataOutputStream doso;
 
+        System.out.println("Start...");
+
         s = new Socket("localhost", 5555);
+
+        System.out.println("Client is online...");
+
         diso = new DataInputStream(s.getInputStream());
         doso = new DataOutputStream(s.getOutputStream());
         BufferedReader bro = new BufferedReader(new InputStreamReader(System.in));
 
-        int i;
+        String sendMsg;
+        String receivedMsg;
+
         do {
-            i = bro.read();
-            doso.write((char) i);
-        } while ((char) i != 'q');
+            System.out.println();
+
+            System.out.print("Send msg : ");
+            sendMsg = bro.readLine();
+            doso.writeUTF(sendMsg);
+            System.out.println("Send successfully: ");
+
+            receivedMsg = diso.readUTF();
+            System.out.println("Received msg : " + receivedMsg);
+
+        } while (!sendMsg.equals("stop") || !receivedMsg.equals("stop"));
 
         bro.close();
-        diso.close();
+        doso.close();
+        s.close();
     }
 }
