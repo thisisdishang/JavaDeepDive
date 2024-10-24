@@ -21,7 +21,7 @@ public class BookApp {
 
         // Input Fields
         frame.add(new JLabel("Book ID:"));
-        idField = new JTextField(20);
+        idField = new JTextField(20);   
         frame.add(idField);
 
         frame.add(new JLabel("Title:"));
@@ -108,6 +108,10 @@ public class BookApp {
             if (book.getBookId().equalsIgnoreCase(searchId) ||
                 book.getTitle().equalsIgnoreCase(searchId) ||
                 book.getAuthor().equalsIgnoreCase(searchId)) {
+                authorField.setText(book.getAuthor());
+                idField.setText(book.getBookId());
+                titleField.setText(book.getTitle());
+                isbnField.setText(book.getIsbn());    
                 displayArea.append(book.toString() + "\n");
             }
         }
