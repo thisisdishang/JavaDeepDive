@@ -6,7 +6,7 @@ public class BookCRUD {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/books";
         String user = "root";
-        String password = "";
+        String password = "1234";
 
         try {
 
@@ -17,7 +17,7 @@ public class BookCRUD {
             //createBookTable(connection);
 
 
-            //insertBook(connection, "Java Programming", "James Gosling", 750);
+            //insertBook(connection, "C Programming", "Denich Ritechie", 500);
             //deleteBook(connection, 2);
             //updateBook(connection, 7,500);
 
