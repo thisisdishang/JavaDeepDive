@@ -3,10 +3,10 @@ package Servlet;
 import java.io.*;
 import javax.servlet.*;
 
-public class First implements Servlet
+public class first implements Servlet
 {
 
-    ServletConfig config=null;  
+    ServletConfig config=null;   
     public void init(ServletConfig config)
     {
         this.config=config;
@@ -18,7 +18,7 @@ public class First implements Servlet
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
         out.println("<html><body>");
-        out.println("<h1>hello this is simple servlet</h1>");
+        out.println("<h1>Hello, This is First Servlet</h1>");
         out.println("</body></html>");
     }
 
