@@ -1,3 +1,5 @@
+package AJT4.Q1;
+
 import java.io.FileNotFoundException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
